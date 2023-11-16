@@ -1,4 +1,4 @@
-package com.n7.iot.model;
+package com.n7.iot.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -15,7 +15,7 @@ import java.sql.Date;
 @Setter
 @Entity
 @Table(name = "parking")
-public class Parking {
+public class ParkingEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -29,5 +29,5 @@ public class Parking {
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "licensePlate", referencedColumnName = "licensePlate")
-    private Car car;
+    private CarEntity carEntity;
 }

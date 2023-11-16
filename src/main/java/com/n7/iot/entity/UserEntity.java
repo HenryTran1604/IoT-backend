@@ -1,4 +1,4 @@
-package com.n7.iot.model;
+package com.n7.iot.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,15 +6,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @Entity
 @Table(name = "user")
-public class User {
+public class UserEntity {
     @Id
     @Column(name = "username", nullable = false)
     private String username;
