@@ -9,6 +9,5 @@ import java.util.List;
 @Repository
 public interface ParkingRepository extends JpaRepository<ParkingEntity, Integer> {
     List<ParkingEntity> findAll();
-    List<ParkingEntity> findByCar(CarEntity carEntity);
     ParkingEntity findByCarAndStatus(CarEntity carEntity, boolean status);
 }

@@ -18,6 +18,7 @@ import java.sql.Date;
 public class ParkingEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "parkingId")
     private int id;
 
     private boolean status;
@@ -29,5 +30,5 @@ public class ParkingEntity {
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "licensePlate", referencedColumnName = "licensePlate")
-    private CarEntity carEntity;
+    private CarEntity car;
 }

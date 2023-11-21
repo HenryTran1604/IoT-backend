@@ -22,11 +22,11 @@ public class CarEntity {
 
     private String model;
 
-    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "username", referencedColumnName = "username")
-    private UserEntity userEntity;
+    private UserEntity user;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "car")
-    List<ParkingEntity> parkingEntities;
+    List<ParkingEntity> parkings;
 }
