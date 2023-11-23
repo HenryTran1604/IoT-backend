@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -23,10 +24,10 @@ public class ParkingEntity {
 
     private boolean status;
 
-    @Column(name = "timeIn")
-    private Date timeIn;
-    @Column(name = "timeOut")
-    private Date timeOut;
+    @Column(name = "timeIn", columnDefinition = "datetime")
+    private Timestamp timeIn;
+    @Column(name = "timeOut", columnDefinition = "datetime")
+    private Timestamp timeOut;
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "licensePlate", referencedColumnName = "licensePlate")
